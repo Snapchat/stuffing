@@ -1,7 +1,7 @@
 # Stuffing
 
-Stuffing is a small library that allows multiple [Applications](https://developer.android.com/reference/android/app/Application) to be _stuffed_ into a single [APK](https://en.wikipedia.org/wiki/Android```Application```package). Since the Android
-operating system only supports a single ```Application``` declaration in each installed APK](https://en.wikipedia.org/wiki/Android```Application```package), this library uses a common
+Stuffing is a small library that allows multiple [Applications](https://developer.android.com/reference/android/app/Application) to be _stuffed_ into a single [APK](https://en.wikipedia.org/wiki/AndroidApplicationpackage). Since the Android
+operating system only supports a single `Application` declaration in each installed APK, this library uses a common
 top-level application and delegates to multiple ```ApplicationLike``` types. The ```ApplicationLike``` types adhere to same general
 interface as the [Application](https://developer.android.com/reference/android/app/Application) type, and are responsible for implementing all functionality that would otherwise but common
 for an ```Application``` class.
