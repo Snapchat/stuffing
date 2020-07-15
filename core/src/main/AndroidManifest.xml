@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.snap.stuffing.lib"
+    >
+
+    <application>
+        <activity android:name=".DynamicLaunchActivity"/>
+
+        <activity
+            android:name=".AppSwitchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:process=":stuffing">
+        </activity>
+
+        <service
+            android:name=".StateTrackingService"
+            android:exported="false">
+            <meta-data android:name="appFamilies" android:value="sentinel"/>
+        </service>
+    </application>
+
+</manifest>

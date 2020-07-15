@@ -1,0 +1,4 @@
+include(':api', 'api')
+include(':core', 'core')
+include(':sample', 'sample')
+rootProject.name='Stuffing'

@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    kapt deps.dagger.android_processor
+    kapt deps.dagger.compiler
+
+    api project(':api')
+    api deps.dagger.android
+    api deps.dagger.android_support
+    api deps.dagger.runtime
+
+    implementation deps.javax.inject
+    implementation deps.dagger.runtime
+    implementation deps.kotlin.stdLib_jdk7
+    implementation deps.processPhoenix
+}

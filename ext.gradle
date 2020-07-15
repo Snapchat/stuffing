@@ -1,0 +1,34 @@
+buildscript {
+    ext.versions = [
+            'supportLib'       : '28.0.0',
+            // This should be consistent with kotlin gradle plugin in root build.gradle
+            'kotlin'           : '1.3.40',
+            'dagger'           : '2.22',
+    ]
+}
+
+allprojects {
+    ext {
+        deps = [
+                'javax'  : [
+                        'annotation': "javax.annotation:javax.annotation-api:1.3",
+                        'inject'    : 'javax.inject:javax.inject:1',
+                ],
+                'support': [
+                        'annotations': "com.android.support:support-annotations:${versions.supportLib}",
+                        'v7'         : "com.android.support:appcompat-v7:${versions.supportLib}",
+                ],
+                'kotlin': [
+                        'stdLib_jdk7': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                ],
+                'dagger': [
+                        'runtime': "com.google.dagger:dagger:${versions.dagger}",
+                        'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
+                        'android': "com.google.dagger:dagger-android:${versions.dagger}",
+                        'android_support': "com.google.dagger:dagger-android-support:${versions.dagger}",
+                        'android_processor': "com.google.dagger:dagger-android-processor:${versions.dagger}",
+                ],
+                'processPhoenix': "com.jakewharton:process-phoenix:2.0.0"
+        ]
+    }
+}
